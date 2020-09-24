@@ -4,11 +4,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 
 const app = express();
-
 // view engine setup
 app.engine('hbs', hbs({ extname: '.hbs', defalutLayout: 'main', layoutsDir: __dirname + '/views/layouts' }));
 app.set('view engine', 'hbs');
