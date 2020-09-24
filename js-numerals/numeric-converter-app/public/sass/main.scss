@@ -8,6 +8,9 @@ $default-font-family: "Yantramanav",
 sans-serif;
 $default-font-size: 1.6rem;
 
+// Transition
+$default-transition: all 0.2s;
+
 
 /** Basic settings */
 *,
@@ -33,6 +36,7 @@ body {
     color: $color-grey;
     font-size: $default-font-size;
     background-color: $color-white;
+    padding: 2rem;
 }
 
 /** Styles */
@@ -42,5 +46,36 @@ body {
 
     &__input {
         padding: 1rem 3rem;
+        border-radius: 10px;
+        border: 2px solid rgba(63, 63, 63, 0.3);
+        transition: $default-transition;
+        margin: 0 2rem 2rem 0;
+        width: 30rem;
+
+        &:hover {
+            transition: $default-transition;
+            border: 2px solid rgba(63, 63, 63, 0.6);
+        }
+    }
+
+    &__number-box {
+        color: $color-grey;
+    }
+
+    &__button {
+        font-family: $default-font-family;
+        font-size: 1.4rem;
+        padding: .8rem 1.5rem;
+        transition: $default-transition;
+        border: 2px solid rgba(63, 63, 63, 0.3) !important;
+        border-radius: 10px;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid;
+
+        &:active {
+            transform: translateY(1px);
+        }
     }
 }

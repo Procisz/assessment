@@ -1,5 +1,5 @@
 {
-  "name": "navaapp",
+  "name": "numeric-converter-app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -31,6 +31,7 @@
     "nodemon": "^2.0.4",
     "npm": "^6.14.8",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.0.9",
     "postcss-cli": "^8.0.0"
   }
 }
