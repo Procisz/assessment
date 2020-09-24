@@ -14,6 +14,7 @@ Create an application that contains a web form, which has a numeric input field 
 When the user gives an arabic number, the system shows the english phrase of that number.
 
 For example:
+
 <pre>
 7    == seven
 42   == forty-two
@@ -23,3 +24,19 @@ For example:
 </pre>
 
 That's all.
+
+# My Solution (Agoston ZAJKAS)
+
+## Setup and run
+
+-Navigate to /numeric-converter-app
+-type "npm run setup"
+-type "npm run start"
+-open http://localhost:3000/
+
+## Informations
+
+-I have never written a single line of test so I added some validations - but I am open to learn it
+-I hope it is enough and we can go to the next step.
+-BW,
+-Agoston

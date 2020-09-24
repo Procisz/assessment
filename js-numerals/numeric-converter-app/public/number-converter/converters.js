@@ -33,7 +33,7 @@ function templateRenderer() {
     else if (checkIfDataIsEmptyString(number) !== true) {
         return nameOfSubmittedNumber.textContent = checkIfDataIsEmptyString(number)
     }
-
+    // parseInt is only because I use type="text" of input;
     else if (checkDataType(parseInt(number), ['number']) !== true) {
         return nameOfSubmittedNumber.textContent = checkDataType(parseInt(number), ['number'])
     }
@@ -78,12 +78,8 @@ function templateRenderer() {
 */
 function checkIfDataIsMissingOrUndefined(data) {
     try {
-        if (!data) {
-            return 'Data is missing or undefined.';
-        }
-        else {
-            return true;
-        }
+        if (!data) return 'Data is missing or undefined.';
+        else return true;
     }
     catch (error) { console.log(error) }
 };
@@ -95,12 +91,8 @@ function checkIfDataIsMissingOrUndefined(data) {
 */
 function checkIfDataIsEmptyString(data) {
     try {
-        if (data == "" || data === "") {
-            return 'Data an empty string';
-        }
-        else {
-            return true;
-        }
+        if (data == "" || data === "") return 'Data an empty string';
+        else return true;
     }
     catch (error) { console.log(error) }
 };
@@ -117,19 +109,19 @@ function checkDataType(data, enabledTypes = []) {
 
         /** Remove types from conditions you don't want to check */
         if (enabledTypes.length > 0) {
-            for (let i = 0; i < enabledTypes.length; i++) {
-                while (allDataTypes.indexOf(enabledTypes[i]) !== -1) {
-                    allDataTypes.splice(allDataTypes.indexOf(enabledTypes[i]), 1);
+            enabledTypes.forEach((result) => {
+                while (allDataTypes.indexOf(enabledTypes[result]) !== -1) {
+                    allDataTypes.splice(allDataTypes.indexOf(enabledTypes[result]), 1);
                 }
-            }
+            })
         }
 
         /** Check modified conditions to type-check data */
-        for (let i = 0; i < allDataTypes.length; i++) {
-            if (typeof data === allDataTypes[i]) {
+        allDataTypes.forEach((result) => {
+            if (typeof data === allDataTypes[result]) {
                 return 'Data type is not permitted';
             }
-        }
+        })
         return true;
     }
     catch (error) { console.log(error) }
